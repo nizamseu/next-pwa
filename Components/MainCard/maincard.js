@@ -9,7 +9,7 @@ const maincard = () => {
         <div className="m-5  border-solid border-2">
           <div className="relative ">
             <div className="flex align-items-center p-2 hover:bg-slate-400">
-              <Image
+              <img
                 width={20}
                 height={15}
                 src="https://aamartaka.com/svg-icon/loan-front.svg"
@@ -18,10 +18,7 @@ const maincard = () => {
               <p className="pl-6 text-xl">Personal Loan</p>
             </div>
             <div className="flex h-56 left-0 top-0 align-center justify-center absolute bg-green-500 w-full  hover:hidden">
-              <Image
-                src="https://aamartaka.com/svg-icon/loan-front.svg"
-                alt=""
-              />
+              <img src="https://aamartaka.com/svg-icon/loan-front.svg" alt="" />
               <p className="absolute text-5xl font-bold top-1/2  items-center justify-center">
                 Loan
               </p>
