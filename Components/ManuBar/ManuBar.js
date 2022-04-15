@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Layout from "../LayOut/LayOut";
+import Layout from "../layout/Layout";
 
 const ManuBar = () => {
   return (
