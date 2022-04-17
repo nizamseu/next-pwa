@@ -11,6 +11,9 @@ const ManuBar = () => {
       </span>
 
       <span>
+        <Link href="/users">
+          <a className="m-2 py-3 ">Users</a>
+        </Link>
         <Link href="/about">
           <a className="m-2 py-3 ">About</a>
         </Link>
