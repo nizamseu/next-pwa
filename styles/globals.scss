@@ -6,6 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300&family=Lato:wght@700&family=Roboto:wght@700&display=swap");
 
 @import "./titleMixing";
+@import "./hoverMixing";
 html,
 body {
   padding: 0;
@@ -22,25 +23,80 @@ a {
 * {
   box-sizing: border-box;
 }
-
-.box-option {
+.mainCard {
+  background-image: url("../Images//Icon/home_banner_background.svg");
+  background-color: #1b5f8d;
+  background-blend-mode: color;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.loan {
   background-color: #00b0be;
+  &:hover {
+    @include hoverMixing;
+  }
 }
-.box-option:hover {
-  opacity: 0;
-  transition: 0.25s linear;
-  transform: scale(1.05);
+.deposite {
+  background-color: #7eb06a;
+  &:hover {
+    @include hoverMixing;
+  }
+}
+.credit_card {
+  background-color: #d3a646;
+  &:hover {
+    @include hoverMixing;
+  }
+}
+.insurance {
+  background-color: #399e72;
+  &:hover {
+    @include hoverMixing;
+  }
 }
 
-.itemHover {
+.prize {
+  background-color: #b4ac6a;
+  &:hover {
+    @include hoverMixing;
+  }
+}
+// .loan:hover {
+//   opacity: 0;
+//   transition: 0.25s linear;
+//   transform: scale(1.05);
+// }
+.phone {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Exo 2", sans-serif;
+  color: #585858;
+  padding-left: 10px;
+}
+.nav_tracking {
+  border: 1px solid #008ecc;
+  padding: 0 20px;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 500;
+  background: #fff;
+  color: #008ecc;
+  transition: all 0.1s linear;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+.single_card_item {
   height: 300px;
   width: 225px;
   font-size: 15px;
+  background-color: white;
 }
 
 .title-text {
   font-size: 45px;
-  font-weight: 300;
+  font-weight: bold;
   font-family: "Exo 2", sans-serif;
 }
 .cardTitle {
@@ -107,12 +163,12 @@ a {
 // }
 .bestDealCard:hover {
   top: -5px;
-  transition: 0.5s;
+  transition: all 0.5s ease-in-out;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   .btn {
     background-color: #fcc645;
     color: #000;
-    transition: 0.5s;
+    transition: all 0.5s ease-in-out;
   }
 }
 

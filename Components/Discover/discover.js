@@ -1,5 +1,8 @@
 import Image from "next/image";
 import handShake from "../../Images/Icon/handshake.png";
+import Exp from "../../Images/Icon/experience.svg";
+import Reliability from "../../Images/Icon/reliability.svg";
+import Fastest from "../../Images/Icon/faster_service.svg";
 
 const discover = () => {
   return (
@@ -17,7 +20,7 @@ const discover = () => {
         <div className="pl-4  pt-5 mx-24  lg:col-span-7">
           <div className="discover-left">
             <div className="dis_icon mr-3">
-              <Image width={"60px"} height={"50px"} src={handShake} alt="" />
+              <Image width={"60px"} height={"50px"} src={Exp} alt="" />
             </div>
             <div className="dis_info">
               <h1 className="dis-info-title">Experience</h1>
@@ -28,29 +31,30 @@ const discover = () => {
           </div>
           <div className="discover-left">
             <div className="dis_icon mr-3">
-              <Image width={"60px"} height={"50px"} src={handShake} alt="" />
+              <Image width={"60px"} height={"50px"} src={Reliability} alt="" />
             </div>
             <div className="dis_info">
-              <h1 className="dis-info-title">Experience</h1>
+              <h1 className="dis-info-title">Reliability</h1>
               <h1 className="dis_info_text">
-                We have experience to serve more than 40k <br /> customer.
+                We strictly follow our partner banks
+                <br /> guideline..
               </h1>
             </div>
           </div>
           <div className="discover-left">
             <div className="dis_icon mr-3">
-              <Image width={"60px"} height={"50px"} src={handShake} alt="" />
+              <Image width={"60px"} height={"50px"} src={Fastest} alt="" />
             </div>
             <div className="dis_info">
-              <h1 className="dis-info-title">Experience</h1>
+              <h1 className="dis-info-title">Fastest & Hassle Free</h1>
               <h1 className="dis_info_text">
-                We have experience to serve more than 40k <br /> customer.
+                Get loan or credit card in a faster way <br /> customer.
               </h1>
             </div>
           </div>
           <div className="discover-left">
             <div className="dis_icon mr-3">
-              <Image width={"60px"} height={"50px"} src={handShake} alt="" />
+              <Image width={"60px"} height={"50px"} src={Fastest} alt="" />
             </div>
             <div className="dis_info">
               <h1 className="dis-info-title">Experience</h1>

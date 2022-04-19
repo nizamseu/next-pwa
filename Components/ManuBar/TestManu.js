@@ -1,4 +1,9 @@
 import { useState } from "react";
+import Image from "next/image";
+import MenuIcon from "../../Images/Icon/menu.png";
+import Logo from "../../Images/Icon/logoWeb.png";
+import Layer from "../../Images/Icon/Layer-6.png";
+import Offer from "../../Images/Icon/offers.svg";
 export default function IndexPage() {
   const [show, setShow] = useState(null);
   const [profile, setProfile] = useState(false);
@@ -8,7 +13,7 @@ export default function IndexPage() {
     <>
       <div className="bg-gray-200 h-full w-full">
         {/* Code block starts */}
-        <nav className="bg-white shadow xl:block hidden">
+        <nav className="bg-white shadow xl:block hidden pb-1">
           <div className="mx-auto container px-6 py-2 xl:py-0">
             <div className="flex items-center justify-between">
               <div className="inset-y-0 left-0 flex items-center xl:hidden">
@@ -34,42 +39,38 @@ export default function IndexPage() {
               </div>
               <div className="flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
                 <div className="flex items-center">
-                  <h2 className="hidden sm:block text-base text-gray-700 font-bold leading-normal pl-3">
+                  {/* <h2 className="hidden sm:block text-base text-gray-700 font-bold leading-normal pl-3">
                     Aamar Taka
-                  </h2>
+                  </h2> */}
+                  <Image height={"58px"} width={"173px"} src={Logo} alt="" />
+                </div>
+                <div className="flex items-center pl-24">
+                  <Image height={"26px"} width={"24px"} src={Layer} alt="" />
+                  <p className="phone">09609122122</p>
                 </div>
               </div>
               <div className="flex">
                 <div className="hidden xl:flex md:mr-6 xl:mr-16">
                   <a
                     href="javascript: void(0)"
-                    className="flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out"
+                    className="flex nav_tracking px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out"
                   >
-                    <span className="mr-2"></span>
-                    Tracking Application
+                    <span className=" mr-2"> Tracking Application</span>
                   </a>
                   <a
                     href="javascript: void(0)"
-                    className="flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out"
+                    className="flex nav_tracking  px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out"
                   >
-                    <span className="mr-2"></span>
                     Trending Offers
                   </a>
                 </div>
-                <div className="hidden xl:flex items-center">
-                  <div className="relative md:mr-6 my-2">
-                    <p className="focus:outline-none bg-gray-100 border-gray-300 border transition duration-150 ease-in-out hover:bg-gray-300 rounded text-gray-600 px-5 py-2 text-xs">
-                      Manu
-                    </p>
-                  </div>
+                <div className="hidden xl:flex items-center mr-2">
+                  <p className="py-2">Menu</p>
                 </div>
-                <div className="hidden xl:flex items-center">
-                  <div className="relative md:mr-6 my-2">
-                    <p className="focus:outline-none bg-gray-100 border-gray-300 border transition duration-150 ease-in-out hover:bg-gray-300 rounded text-gray-600 px-5 py-2 text-xs">
-                      Manu2
-                    </p>
-                  </div>
-                </div>
+
+                <button>
+                  <Image width={20} height={20} src={MenuIcon} alt="" />
+                </button>
               </div>
             </div>
           </div>
@@ -81,7 +82,7 @@ export default function IndexPage() {
             <div className="flex items-center">
               <div className="relative mr-6 ">
                 <button className="focus:outline-none bg-gray-100 border-gray-300 border transition duration-150 ease-in-out hover:bg-gray-300 rounded text-gray-600 px-5 py-2 text-xs">
-                  Manageee
+                  Menu
                 </button>
               </div>
               <div
@@ -133,7 +134,7 @@ export default function IndexPage() {
                       <div className="flex items-center justify-between w-full">
                         <div className="flex items-center">
                           <p className="text-base md:text-2xl text-gray-800 ml-3">
-                            The North
+                            Aamar Taka
                           </p>
                         </div>
                         <div
