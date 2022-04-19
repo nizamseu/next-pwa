@@ -1,0 +1,7 @@
+@mixin title($textColor, $fontSize, $padding, $fontWeight) {
+  color: $textColor;
+  padding: $padding 0;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  font-family: "Exo 2", sans-serif;
+}
