@@ -21,8 +21,7 @@ const M_Main = ({ message, messages }) => {
   return (
     <div>
       <h1 className="main_title">{title1} </h1>
-
-      <h1 className="applyText"> {title2}</h1>
+      <p className="applyText"> {title2}</p>
 
       <div className=" grid gap-1  grid-cols-3 place-content-center mt-8 place-items-center mx-auto ">
         {data &&

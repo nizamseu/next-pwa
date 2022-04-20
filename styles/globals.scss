@@ -249,8 +249,10 @@ a {
   margin: 10px 0;
   text-align: center;
   width: 98%;
+  font-family: "exo 2", sans-serif !important;
 }
 .applyText {
+  font-family: "exo 2", sans-serif !important;
   font-size: 27px;
   color: #ec5d01;
   text-align: center;
@@ -263,6 +265,7 @@ a {
   box-shadow: 0 0 5px #e2e2e2;
   border: none !important;
   padding: 20px 0 15px;
+  margin: 5px;
 }
 .cardText {
   color: #434343;

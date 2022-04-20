@@ -25,7 +25,7 @@ const Index = () => {
   const [local, setLocal] = useState("en");
   const message = {
     en: {
-      title1: "Compare Rates, Check Eligibility and Apply",
+      title1: "Compare Rates, Check Eligibility",
       title2: "and Apply",
       data: [
         { name: "Personal Loan", img: Ploan },
@@ -37,8 +37,8 @@ const Index = () => {
       ],
     },
     bn: {
-      title1: "হার তুলনা করুন, যোগ্যতা পরীক্ষা করুন এবং আবেদন করুন",
-      title: "এবং আবেদন করুন",
+      title1: "হার তুলনা করুন, যোগ্যতা পরীক্ষা করুন ",
+      title2: "এবং আবেদন করুন",
       data: [
         { name: "পার্সোনাল লোন ", img: Ploan },
         { name: "হোম লোন ", img: Hloan },
