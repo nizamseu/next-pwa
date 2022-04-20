@@ -6,21 +6,23 @@ import CC from "../../Images/Icon/credit-card-front.svg";
 import DPS from "../../Images/Icon/dps.svg";
 import FD from "../../Images/Icon/fixed_deposit.svg";
 
-const M_Main = () => {
-  const data = [
-    { name: "Personal Loan", img: Ploan },
-    { name: "Home Loan", img: Hloan },
-    { name: "Car Loan", img: Car },
-    { name: "Credit Card", img: CC },
-    { name: "DPS", img: DPS },
-    { name: "Fix Deposite", img: FD },
-  ];
+const M_Main = ({ message, messages }) => {
+  const { title1, title2, data } = messages;
+  console.log(title2);
+  // const data = [
+  //   { name: "Personal Loan", img: Ploan },
+  //   { name: "Home Loan", img: Hloan },
+  //   { name: "Car Loan", img: Car },
+  //   { name: "Credit Card", img: CC },
+  //   { name: "DPS", img: DPS },
+  //   { name: "Fix Deposite", img: FD },
+  // ];
 
   return (
     <div>
-      <h1 className="main_title">Compare Rates, Check Eligibility </h1>
+      <h1 className="main_title">{title1} </h1>
 
-      <h1 className="applyText"> & Apply</h1>
+      <h1 className="applyText"> {title2}</h1>
 
       <div className=" grid gap-1  grid-cols-3 place-content-center mt-8 place-items-center mx-auto ">
         {data &&

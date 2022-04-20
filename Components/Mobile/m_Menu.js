@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Logo from "../../Images/Icon/logoWeb.png";
 import Notification from "../../Images/Icon/notification1.png";
-const M_Menu = () => {
+const M_Menu = ({ local, setLocal }) => {
+  const handleChange = (e) => {
+    setLocal(e.target.value);
+  };
   return (
     <div className="m_menu flex justify-between items-center px-8 py-2">
       <div>
@@ -26,8 +29,17 @@ const M_Menu = () => {
         <Image width={"140px"} height={"40px"} src={Logo} alt="" />
       </div>
       <div>
-        {" "}
-        <Image width={"43px"} height={"50px"} src={Notification} alt="" />
+        <select onChange={handleChange} defaultValue={local} name="Language">
+          {["en", "bn"].map((item) => {
+            return (
+              <>
+                <option value={item}>{item}</option>
+              </>
+            );
+          })}
+        </select>
+        {/* <button onClick={() => setLocal("bn")}>{local}</button> */}
+        {/* <Image width={"43px"} height={"40px"} src={Notification} alt="" /> */}
       </div>
     </div>
   );

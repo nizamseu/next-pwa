@@ -13,6 +13,7 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  presets: ["next/babel"],
 };
 
 module.exports = withPWA({

@@ -215,7 +215,7 @@ a {
 .m_menu {
   background-color: #f8f8f8;
   height: 56px;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%);
+  box-shadow: 0 1px 3px 0 #00000033;
 }
 
 .m_subMenu {
@@ -254,7 +254,6 @@ a {
   font-size: 27px;
   color: #ec5d01;
   text-align: center;
-  font-family: "exo 2", sans-serif;
   font-weight: bold;
   line-height: 10px;
 }
