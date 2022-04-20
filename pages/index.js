@@ -1,9 +1,7 @@
-import axios from "axios";
 import BestDeal from "../Components/BestDeal/bestDeal";
 import Maincard from "../Components/MainCard/maincard";
 import Discover from "../Components/Discover/discover";
 import Statistics from "../Components/Statistics/statistics";
-
 import Ploan from "../Images/Icon/personal_loan.svg";
 import Hloan from "../Images/Icon/home_laon.svg";
 import Car from "../Images/Icon/car_loan.svg";
@@ -37,7 +35,7 @@ const Index = () => {
       ],
     },
     bn: {
-      title1: "হার তুলনা করুন, যোগ্যতা পরীক্ষা করুন ",
+      title1: "রেট  তুলনা করুন, পরীক্ষা করুন ",
       title2: "এবং আবেদন করুন",
       data: [
         { name: "পার্সোনাল লোন ", img: Ploan },
