@@ -5,8 +5,10 @@ import Deposit from "../../Images/Icon/deposit-font.svg";
 import Credit from "../../Images/Icon/credit-card-front.svg";
 import Insurance from "../../Images/Icon/insurance-font.svg";
 import Prize from "../../Images/Icon/prize-bond.svg";
-
-const maincard = () => {
+import Link from "next/link";
+import { useRouter } from "next/router";
+const Maincard = () => {
+  const router = useRouter();
   return (
     <div className="mainCard">
       <h1 className="title-text text-4xl  text-center py-16 text-white">
@@ -16,7 +18,12 @@ const maincard = () => {
       <div className="container px-14 gap-4 grid xl:grid-cols-5  lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 place-content-center place-items-center mx-auto pb-24">
         {/* Loan Component */}
         <div className="single_card_item  relative">
-          <div className=" flex align-items-center p-2 hover:bg-slate-400">
+          <div
+            onClick={() => {
+              router.push("/personalLoan");
+            }}
+            className="singleItem flex align-items-center p-2 "
+          >
             <Image width={20} height={15} src={Loan} alt="" />
             <p className="pl-6 text-xl">Personal Loan</p>
           </div>
@@ -113,4 +120,4 @@ const maincard = () => {
   );
 };
 
-export default maincard;
+export default Maincard;
