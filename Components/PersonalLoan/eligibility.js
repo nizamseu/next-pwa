@@ -1,6 +1,14 @@
+import Router from "next/router";
+import { useDispatch } from "react-redux";
+import { saveData } from "../../Redux/loanSlice";
+
 const Eligibility = () => {
+  const dispatch = useDispatch();
   const handleChange = (e) => {
-    console.log(e.target.name);
+    const name = e.target.name;
+    const value = e.target.value;
+    console.log(name, value);
+    dispatch(saveData({ name, value }));
   };
   return (
     <div className="eligibility">
@@ -18,6 +26,7 @@ const Eligibility = () => {
               <label className="radio-container">
                 New Loan
                 <input
+                  required
                   onChange={handleChange}
                   type="radio"
                   id="new_loan"
@@ -32,6 +41,7 @@ const Eligibility = () => {
               <label className="radio-container">
                 Take Over
                 <input
+                  required
                   onChange={handleChange}
                   type="radio"
                   id="take_over"
@@ -46,6 +56,7 @@ const Eligibility = () => {
               <label className="radio-container">
                 Top Up
                 <input
+                  required
                   onChange={handleChange}
                   type="radio"
                   id="top_up"
@@ -66,6 +77,7 @@ const Eligibility = () => {
             <div className="flex justify-center">
               <div className="mb-3 w-full">
                 <select
+                  required
                   name="profession"
                   onChange={handleChange}
                   className="form-select form-select-lg mb-3 w-full px-4 py-2 mt-1 text-xl font-normal text-gray-700bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300b rounded "
@@ -73,7 +85,7 @@ const Eligibility = () => {
                   <option selected>Select Your Profession</option>
                   <option value="Salaried">Salaried</option>
                   <option value="Businessman">Businessman</option>
-                  <option value="Land Lord<">Land Lord</option>
+                  <option value="Land Lord">Land Lord</option>
                 </select>
               </div>
             </div>
@@ -82,7 +94,12 @@ const Eligibility = () => {
         {/* buttion section  */}
         <div className="flex items-center justify-between">
           <button className="elg_btn_compare  m-4">Compare Rate</button>
-          <button className="elg_btn_check  m-4">Compare Rate</button>
+          <button
+            onClick={() => Router.push("/personalLoan/mainform")}
+            className="elg_btn_check  m-4"
+          >
+            Compare Rate
+          </button>
         </div>
       </div>
     </div>
