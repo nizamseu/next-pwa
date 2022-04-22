@@ -10,3 +10,18 @@
   border: none;
   margin-top: 5px;
 }
+
+@mixin nextBtn($bg_color) {
+  width: 200px !important;
+  color: #696969;
+  border-radius: 30px;
+  padding: 13px 40px;
+  background: $bg_color;
+  z-index: 0;
+  transition: all 0.3s linear;
+  border: 1px solid #696969;
+  color: #696969;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 10px;
+}

@@ -1,14 +1,19 @@
+import { data } from "autoprefixer";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { saveData } from "../../Redux/loanSlice";
+import { nextPage, saveData } from "../../Redux/loanSlice";
 
 const LoanForm = () => {
   const dispatch = useDispatch();
-
+  const data = useSelector((state) => state.loan.data);
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     dispatch(saveData({ name, value }));
+  };
+
+  const handleNext = () => {
+    dispatch(nextPage());
   };
   return (
     <div>
@@ -140,7 +145,7 @@ const LoanForm = () => {
                   onChange={handleChange}
                   className="form-select form-select-lg mb-3 w-full px-4 py-2 mt-1 text-xl font-normal text-gray-700bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300b rounded "
                 >
-                  <option selected>Select Your Profession</option>
+                  <option selected>{data?.profession}</option>
                   <option value="Salaried">Salaried</option>
                   <option value="Businessman">Businessman</option>
                   <option value="Land Lord">Land Lord</option>
@@ -204,6 +209,16 @@ const LoanForm = () => {
           </div>
         </div>
       </div>
+      {data.gender &&
+        data.residence &&
+        data.location &&
+        data.day &&
+        data.month &&
+        data.year && (
+          <button onClick={() => handleNext()} className="next">
+            Next
+          </button>
+        )}
     </div>
   );
 };

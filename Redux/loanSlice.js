@@ -34,6 +34,7 @@ export const loanSlice = createSlice({
     },
     nextPage: (state, action) => {
       state.page += 1;
+      console.log(state.page);
     },
 
     prevPage: (state, action) => {

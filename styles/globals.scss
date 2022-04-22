@@ -431,3 +431,13 @@ a {
   height: 50px;
   width: 100%;
 }
+.next {
+  @include nextBtn(#ffffff4d);
+  float: right;
+  margin-right: 15px;
+}
+.next:hover {
+  @include nextBtn(#0ab9f2);
+  border: 1px solid #0ab9f2;
+  transition: all 0.5s linear;
+}
