@@ -289,10 +289,12 @@ a {
 .personal {
   background: #1b5f8d;
   background-image: url("../Images/personalLoan/background.svg");
-  background-position: left;
+  // background-position: right;
+  background-position-x: -130px;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .p_mainSection {
   display: flex;
   flex-direction: column;
@@ -395,4 +397,37 @@ a {
 }
 .show_data_user {
   fill: #00bdf2;
+}
+
+.single_product_item {
+  padding: 9px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 0 1px 0 #0000001a;
+  margin: 10px;
+}
+.single_product_image {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #0ab9f2;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+.single_item_gender {
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.single_item_gender_input {
+  background: #fff !important;
+  border-radius: 3px;
+  height: 50px;
+  width: 100%;
 }

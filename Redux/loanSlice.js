@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   page: 0,
   data: {
+    product_type: "personal Loan",
     loan_type: "",
     profession: "",
     gender: "",

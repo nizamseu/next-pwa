@@ -11,7 +11,7 @@ const Eligibility = () => {
     dispatch(saveData({ name, value }));
   };
   return (
-    <div className="eligibility">
+    <div className="eligibility mb-20">
       <h1 className="text-5xl pt-24 pb-12 text-center text-white ">
         We help you to get <span className="font-bold ">personal</span> loan
         easily

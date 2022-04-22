@@ -14,14 +14,14 @@ const LoanForm = () => {
     <div>
       <div className="gender grid xl:grid-cols-12 grid-cols">
         {/* gender Area  */}
-        <div>
+        <div className="flex mt-4 items-center mx-4">
           {/* text area section  */}
-          <div className="col-span-4 my-2">
+          <div className="col-span-4 my-2 w-full">
             <h1 className="text-left text-xl">Gender</h1>
           </div>
           {/* input value area section  */}
-          <div className="col-span-8 w-full">
-            <div className="single_field ">
+          <div className="single_item_gender col-span-8 w-full">
+            <div className="single_item_gender_input ">
               <label className="radio-container">
                 Female
                 <input
@@ -35,7 +35,7 @@ const LoanForm = () => {
                 <span className="radio-checkmark"></span>
               </label>
             </div>
-            <div className="single_field">
+            <div className="single_item_gender_input">
               <label className="radio-container">
                 Male
                 <input
@@ -49,7 +49,7 @@ const LoanForm = () => {
                 <span className="radio-checkmark"></span>
               </label>
             </div>
-            <div className="single_field">
+            <div className="single_item_gender_input">
               <label className="radio-container">
                 Other
                 <input
@@ -66,9 +66,9 @@ const LoanForm = () => {
           </div>
         </div>
         {/* Date of Birth  */}
-        <div cclassName="col-span-4 my-2">
+        <div className="flex items-center mt-3 mx-4">
           {/* text area  */}
-          <div>
+          <div className="col-span-4 my-2  w-full">
             <h1 className="text-left text-xl">Date of Birth</h1>
           </div>
           {/* input value area  */}
@@ -124,9 +124,9 @@ const LoanForm = () => {
         </div>
 
         {/* your Profession area is here  */}
-        <div>
+        <div className="flex items-center mx-4">
           {/* text area section  */}
-          <div className="col-span-4 my-2">
+          <div className="col-span-4 my-2 w-full">
             <h1 className="text-left text-xl">Your Profession</h1>
           </div>
 
@@ -151,9 +151,9 @@ const LoanForm = () => {
         </div>
 
         {/* Residence area is here  */}
-        <div>
+        <div className="flex items-center mx-4">
           {/* text area section  */}
-          <div className="col-span-4 my-2">
+          <div className="col-span-4 my-2 w-full">
             <h1 className="text-left text-xl">Your Residence Type</h1>
           </div>
 
@@ -178,9 +178,9 @@ const LoanForm = () => {
         </div>
 
         {/* Business Location */}
-        <div>
+        <div className="flex items-center mx-4">
           {/* text area section  */}
-          <div className="col-span-4 my-2">
+          <div className="col-span-4 my-2 w-full">
             <h1 className="text-left text-xl">Business Location</h1>
           </div>
 

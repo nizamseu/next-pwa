@@ -7,9 +7,26 @@ import { useSelector } from "react-redux";
 import Stepper from "react-stepper-horizontal/lib/Stepper";
 import LoanForm from "../../Components/PersonalLoan/loanForm";
 import SalaryForm from "../../Components/PersonalLoan/salariedForm";
+import SingleProduct from "../../Components/PersonalLoan/singleProduct";
+import Man from "../../Images/personalLoan/bussiness-man.png";
+import Woman from "../../Images/personalLoan/woman.png";
+import Nutral from "../../Images/personalLoan/neutral.png";
+import LoanType from "../../Images/personalLoan/personal-loan-type.svg";
 const Mainform = () => {
   const page = useSelector((state) => state.loan.page);
   const data = useSelector((state) => state.loan.data);
+
+  let url = null;
+  if (data.gender === "male") {
+    url = Man;
+  }
+  if (data.gender === "female") {
+    url = Woman;
+  }
+  if (data.gender === "other") {
+    url = Nutral;
+  }
+
   console.log(page);
   return (
     <div style={{ backgroundColor: "#1b5f8d", height: "100%" }}>
@@ -41,18 +58,24 @@ const Mainform = () => {
         {/* view Data section  */}
         <div className="form_singleItem lg:col-span-4 m-4">
           <div className="show_Data_Header flex items-center">
-            <Image
-              width="60px"
-              height="50px"
-              className="show_data_user"
-              src={UserWithTie}
-              alt=""
-            />
+            {data?.gender && (
+              <Image
+                width="60px"
+                height="50px"
+                className="show_data_user"
+                src={url}
+                alt=""
+              />
+            )}
+
             <div className="ml-2">
-              <div className="flex items-center ">
-                <Image width="15px" height="15px" src={Calender} alt="" />
-                <h1 className="ml-1">52 years 3 months 19 days</h1>
-              </div>
+              {data.day && data.month && data.year && (
+                <div className="flex items-center ">
+                  <Image width="15px" height="15px" src={Calender} alt="" />
+                  <h1 className="ml-1">{`${data.year}  ${data.month}  ${data.day}`}</h1>
+                </div>
+              )}
+
               {data?.location && (
                 <div className="flex items-center ">
                   <Image width="15px" height="15px" src={LocationIcon} alt="" />
@@ -61,7 +84,52 @@ const Mainform = () => {
               )}
             </div>
           </div>
-          <h1>Show Data</h1>{" "}
+          {/* show Data section  */}
+          <div>
+            {/* <h1>Show Data</h1> */}
+            {/* product Type  */}
+            <SingleProduct
+              image={LoanType}
+              title={"Product Type"}
+              subTitle={"Personal Loan "}
+            />
+
+            {/* Profession  */}
+            {data?.profession && (
+              <SingleProduct
+                image={LoanType}
+                title={"Profession"}
+                subTitle={data?.profession}
+              />
+            )}
+
+            {/* Personal Loan Type  */}
+            {data?.loan_type && (
+              <SingleProduct
+                image={LoanType}
+                title={"Personal Loan Type"}
+                subTitle={data?.loan_type}
+              />
+            )}
+
+            {/* Residence Type  */}
+            {data?.residence && (
+              <SingleProduct
+                image={LoanType}
+                title={"Residence Type"}
+                subTitle={data?.residence}
+              />
+            )}
+
+            {/* Location  */}
+            {data?.location && (
+              <SingleProduct
+                image={LoanType}
+                title={"Location"}
+                subTitle={data?.location}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>
