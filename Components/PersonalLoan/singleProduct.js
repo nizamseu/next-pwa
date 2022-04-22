@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const singleProduct = ({ image, title, subTitle }) => {
   return (
-    <div className="single_product_item flex bg-white border-0 p-2">
+    <div className="overflow-hidden single_product_item flex bg-white border-0 p-2">
       <div
         style={{
           display: "flex",

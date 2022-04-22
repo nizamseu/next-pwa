@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import Stepper from "react-stepper-horizontal/lib/Stepper";
 import LoanForm from "../../Components/PersonalLoan/loanForm";
 import SalaryForm from "../../Components/PersonalLoan/salariedForm";
+import BusinessForm from "../../Components/PersonalLoan/businessForm";
 import SingleProduct from "../../Components/PersonalLoan/singleProduct";
 import Man from "../../Images/personalLoan/bussiness-man.png";
 import Woman from "../../Images/personalLoan/woman.png";
@@ -15,7 +16,8 @@ import LoanType from "../../Images/personalLoan/personal-loan-type.svg";
 const Mainform = () => {
   const page = useSelector((state) => state.loan.page);
   const data = useSelector((state) => state.loan.data);
-
+  const salaryData = useSelector((state) => state.loan.salaryData);
+  console.log(salaryData);
   let url = null;
   if (data.gender === "male") {
     url = Man;
@@ -51,12 +53,13 @@ const Mainform = () => {
               />
               {page === 0 && <LoanForm />}
               {page === 1 && <SalaryForm />}
+              {page === 2 && <BusinessForm />}
             </div>
           </div>
         </div>
 
         {/* view Data section  */}
-        <div className="form_singleItem lg:col-span-4 m-4">
+        <div className="form_singleItem h-screen overflow-scroll lg:col-span-4 m-4">
           <div className="show_Data_Header flex items-center">
             {data?.gender && (
               <Image
@@ -127,6 +130,47 @@ const Mainform = () => {
                 image={LoanType}
                 title={"Location"}
                 subTitle={data?.location}
+              />
+            )}
+
+            {/* salary section  */}
+            {page === 1 && <h1 className="my-4">Salaried Incom Info</h1>}
+            {salaryData.company_name && (
+              <SingleProduct
+                image={LoanType}
+                title={"Company Name"}
+                subTitle={salaryData?.company_name}
+              />
+            )}
+
+            {salaryData.company_type && (
+              <SingleProduct
+                image={LoanType}
+                title={"Company Type"}
+                subTitle={salaryData?.company_type}
+              />
+            )}
+
+            {salaryData?.job_status && (
+              <SingleProduct
+                image={LoanType}
+                title={"Job Status"}
+                subTitle={salaryData?.job_status}
+              />
+            )}
+            {page === 1 && (
+              <SingleProduct
+                image={LoanType}
+                title={"Current Job Experience"}
+                subTitle={`${salaryData?.job_exp_curr_year} ${salaryData?.job_exp_curr_month}`}
+              />
+            )}
+
+            {page === 1 && (
+              <SingleProduct
+                image={LoanType}
+                title={"Total Job Experience"}
+                subTitle={`${salaryData?.job_exp_total_year} ${salaryData?.job_exp_total_month}`}
               />
             )}
           </div>

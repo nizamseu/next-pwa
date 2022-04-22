@@ -13,6 +13,15 @@ const initialState = {
     residence: "",
     location: "",
   },
+  salaryData: {
+    company_name: "",
+    company_type: "",
+    job_status: "",
+    job_exp_curr_year: "",
+    job_exp_curr_month: "",
+    job_exp_total_year: "",
+    job_exp_total_month: "",
+  },
 };
 
 export const loanSlice = createSlice({
@@ -45,12 +54,19 @@ export const loanSlice = createSlice({
       newData[action.payload.name] = action.payload.value;
       state.data = newData;
     },
+
+    saveSalaryData: (state, action) => {
+      const newData = { ...state.salaryData };
+      newData[action.payload.name] = action.payload.value;
+      state.salaryData = newData;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
 export const {
   saveData,
+  saveSalaryData,
   nextPage,
   prevPage,
   increment,

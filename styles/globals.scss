@@ -378,7 +378,7 @@ a {
   font-weight: 400;
   padding: 5px;
   border-radius: 5px;
-  height: 100%;
+
   background: #effaff;
 }
 .formHeader {
@@ -436,6 +436,17 @@ a {
   float: right;
   margin-right: 15px;
 }
+.pre {
+  @include nextBtn(#ffffff4d);
+  float: left;
+  margin-left: 15px;
+}
+.pre:hover {
+  @include nextBtn(#0ab9f2);
+  border: 1px solid #0ab9f2;
+  transition: all 0.5s linear;
+}
+
 .next:hover {
   @include nextBtn(#0ab9f2);
   border: 1px solid #0ab9f2;

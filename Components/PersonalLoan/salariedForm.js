@@ -1,18 +1,25 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { nextPage, saveData } from "../../Redux/loanSlice";
+import { nextPage, prevPage, saveSalaryData } from "../../Redux/loanSlice";
 
 const SalariedForm = () => {
+  const page = useSelector((state) => state.loan.page);
+  const salaryData = useSelector((state) => state.loan.salaryData);
+
   const dispatch = useDispatch();
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    dispatch(saveData({ name, value }));
+    dispatch(saveSalaryData({ name, value }));
   };
 
   const handleNext = () => {
     dispatch(nextPage());
   };
+  const handlePre = () => {
+    dispatch(prevPage());
+  };
+
   return (
     <div className="gender grid xl:grid-cols-12 grid-cols">
       {/* your Company Name here  */}
@@ -27,6 +34,7 @@ const SalariedForm = () => {
           <div className="flex justify-center">
             <div className="mb-3 w-full">
               <input
+                onChange={handleChange}
                 name="company_name"
                 className="form-select form-select-lg mb-3 w-full px-4 py-2 mt-1 text-xl font-normal text-gray-700bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300b rounded "
                 type="text"
@@ -175,6 +183,26 @@ const SalariedForm = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* button next button pre  */}
+      <div>
+        {page === 1 && (
+          <button onClick={() => handlePre()} className="pre mb-4">
+            Preview
+          </button>
+        )}
+        {salaryData.company_name &&
+          salaryData.company_type &&
+          salaryData.job_status &&
+          salaryData.job_exp_curr_year &&
+          salaryData.job_exp_curr_month &&
+          salaryData.job_exp_total_year &&
+          salaryData.job_exp_total_month && (
+            <button onClick={() => handleNext()} className="next mb-4">
+              Next
+            </button>
+          )}
       </div>
     </div>
   );
