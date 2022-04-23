@@ -21,7 +21,7 @@ const SalariedForm = () => {
   };
 
   return (
-    <div className="gender grid xl:grid-cols-12 grid-cols">
+    <div className="gender grid ">
       {/* your Company Name here  */}
       <div className="flex justify-items-center items-center mt-8 mx-4">
         {/* text area section  */}

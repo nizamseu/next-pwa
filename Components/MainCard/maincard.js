@@ -7,8 +7,8 @@ import Insurance from "../../Images/Icon/insurance-font.svg";
 import Prize from "../../Images/Icon/prize-bond.svg";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Router from "next/router";
 const Maincard = () => {
-  const router = useRouter();
   return (
     <div className="mainCard">
       <h1 className="title-text text-4xl  text-center py-16 text-white">
@@ -19,13 +19,23 @@ const Maincard = () => {
         {/* Loan Component */}
         <div className="single_card_item  relative">
           <div
-            onClick={() => {
-              router.push("/personalLoan");
-            }}
-            className="singleItem flex align-items-center p-2 "
+            onClick={() => Router.push("/user")}
+            className="singleItem flex align-items-center p-2 z-50 "
           >
             <Image width={20} height={15} src={Loan} alt="" />
-            <p className="pl-6 text-xl">Personal Loan</p>
+            <p className="pl-6 text-xl ">Personal Loan 3</p>
+          </div>
+          <div className="singleItem flex align-items-center p-2 ">
+            <Image width={20} height={15} src={Loan} alt="" />
+            <p onClick={() => Router.push("/user")} className="pl-6 text-xl">
+              Personal Loan 2
+            </p>
+          </div>
+          <div className="singleItem flex align-items-center p-2 ">
+            <Image width={20} height={15} src={Loan} alt="" />
+            <p onClick={() => Router.push("/user")} className="pl-6 text-xl">
+              Personal Loan 2
+            </p>
           </div>
           <div className="loan flex h-full left-0 top-0  absolute w-full ">
             <div
@@ -35,7 +45,7 @@ const Maincard = () => {
               <Image height={300} width={300} src={Loan} alt="" />
             </div>
             <p className="cardTitle absolute top-4 left-4  text-2xl font-bold text-white">
-              Loan
+              Loan 22
             </p>
           </div>
         </div>

@@ -17,7 +17,7 @@ const LoanForm = () => {
   };
   return (
     <div>
-      <div className="gender grid xl:grid-cols-12 grid-cols">
+      <div className="gender grid ">
         {/* gender Area  */}
         <div className="flex mt-4 items-center mx-4">
           {/* text area section  */}
@@ -36,6 +36,7 @@ const LoanForm = () => {
                   id="new_loan"
                   name="gender"
                   value="female"
+                  style={{ marginLeft: "1px" }}
                 />
                 <span className="radio-checkmark"></span>
               </label>
@@ -145,7 +146,7 @@ const LoanForm = () => {
                   onChange={handleChange}
                   className="form-select form-select-lg mb-3 w-full px-4 py-2 mt-1 text-xl font-normal text-gray-700bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300b rounded "
                 >
-                  <option selected>{data?.profession}</option>
+                  <option selected>{data?.profession || "Profession"}</option>
                   <option value="Salaried">Salaried</option>
                   <option value="Businessman">Businessman</option>
                   <option value="Land Lord">Land Lord</option>

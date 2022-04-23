@@ -24,7 +24,7 @@ a {
   box-sizing: border-box;
 }
 .mainCard {
-  background-image: url("../Images//Icon/home_banner_background.svg");
+  background-image: url("../Images/Icon/home_banner_background.svg");
   background-color: #1b5f8d;
   background-blend-mode: color;
   background-position: center;
@@ -68,6 +68,7 @@ a {
 }
 .singleItem:hover {
   background-color: #d31414;
+  cursor: pointer;
 }
 // .loan:hover {
 //   opacity: 0;
@@ -266,14 +267,14 @@ a {
   font-weight: bold;
   line-height: 10px;
 }
-.mainCard {
-  border-radius: 10px;
-  background: #fff;
-  box-shadow: 0 0 5px #e2e2e2;
-  border: none !important;
-  padding: 20px 0 15px;
-  margin: 5px;
-}
+// .mainCard {
+//   border-radius: 10px;
+//   background: #fff;
+//   box-shadow: 0 0 5px #e2e2e2;
+//   border: none !important;
+//   padding: 20px 0 15px;
+//   margin: 5px;
+// }
 .cardText {
   color: #434343;
   font-size: 14px;
@@ -451,4 +452,28 @@ a {
   @include nextBtn(#0ab9f2);
   border: 1px solid #0ab9f2;
   transition: all 0.5s linear;
+}
+// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_radio
+select,
+input {
+  outline: none;
+}
+
+// select:focus > option:hover {
+//   border: 10px solid red;
+// }
+// option {
+//   border: none !important;
+//   color: #357b1d !important;
+// }
+
+input[type="radio"] {
+  border: 0;
+  background: none;
+  -webkit-appearance: none;
+}
+input[type="radio"]:checked {
+  border: 5px solid #00bdf2;
+  border-radius: 100%;
+  -webkit-appearance: green;
 }

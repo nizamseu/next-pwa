@@ -98,7 +98,7 @@ const Eligibility = () => {
             onClick={() => Router.push("/personalLoan/mainform")}
             className="elg_btn_check  m-4"
           >
-            Compare Rate
+            Check Eligibility
           </button>
         </div>
       </div>
