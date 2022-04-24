@@ -17,27 +17,15 @@ const Maincard = () => {
 
       <div className="container px-14 gap-4 grid xl:grid-cols-5  lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 place-content-center place-items-center mx-auto pb-24">
         {/* Loan Component */}
-        <div className="single_card_item  relative">
-          <div
-            onClick={() => Router.push("/user")}
-            className="singleItem flex align-items-center p-2 z-50 "
-          >
-            <Image width={20} height={15} src={Loan} alt="" />
-            <p className="pl-6 text-xl ">Personal Loan 3</p>
-          </div>
-          <div className="singleItem flex align-items-center p-2 ">
-            <Image width={20} height={15} src={Loan} alt="" />
-            <p onClick={() => Router.push("/user")} className="pl-6 text-xl">
-              Personal Loan 2
-            </p>
-          </div>
-          <div className="singleItem flex align-items-center p-2 ">
-            <Image width={20} height={15} src={Loan} alt="" />
-            <p onClick={() => Router.push("/user")} className="pl-6 text-xl">
-              Personal Loan 2
-            </p>
-          </div>
-          <div className="loan flex h-full left-0 top-0  absolute w-full ">
+        <div className="loan single_card_item  relative">
+          <Link href={"/personalLoan"}>
+            <a className="singleItem flex align-items-center p-2 z-50 ">
+              <Image width={20} height={15} src={Loan} alt="" />
+              <p className="pl-6 text-xl ">Personal Loan </p>
+            </a>
+          </Link>
+
+          <div className="loan_test flex h-full left-0 top-0  absolute w-full ">
             <div
               style={{ position: "absolute", bottom: "0", left: "10%" }}
               className="flex justify-center align-bottom mx-auto"
@@ -51,12 +39,12 @@ const Maincard = () => {
         </div>
 
         {/* Deposite Components */}
-        <div className="single_card_item  relative">
-          <div className=" flex align-items-center p-2 hover:bg-slate-400">
+        <div className="deposite single_card_item  relative">
+          <div className="single_card_item_header flex align-items-center p-2 hover:bg-slate-400">
             <Image width={20} height={15} src={Deposit} alt="" />
             <p className="pl-6 text-xl">Personal Loan</p>
           </div>
-          <div className="deposite flex h-full left-0 top-0  absolute w-full ">
+          <div className="loan_test flex h-full left-0 top-0  absolute w-full ">
             <div
               style={{ position: "absolute", bottom: "0", left: "10%" }}
               className="flex justify-center align-bottom mx-auto"
@@ -70,12 +58,12 @@ const Maincard = () => {
         </div>
 
         {/*Credit cart Component */}
-        <div className="single_card_item  relative">
-          <div className=" flex align-items-center p-2 hover:bg-slate-400">
+        <div className="credit_card single_card_item  relative">
+          <div className="single_card_item_header flex align-items-center p-2 hover:bg-slate-400">
             <Image width={20} height={15} src={Credit} alt="" />
             <p className="pl-6 text-xl">Personal Loan</p>
           </div>
-          <div className="credit_card flex h-full left-0 top-0  absolute w-full ">
+          <div className="loan_test flex h-full left-0 top-0  absolute w-full ">
             <div
               style={{ position: "absolute", bottom: "0", left: "10%" }}
               className="flex justify-center align-bottom mx-auto"
@@ -89,12 +77,12 @@ const Maincard = () => {
         </div>
 
         {/* Insurance Component */}
-        <div className="single_card_item  relative">
-          <div className=" flex align-items-center p-2 hover:bg-slate-400">
+        <div className="insurance single_card_item  relative">
+          <div className="single_card_item_header flex align-items-center p-2 hover:bg-slate-400">
             <Image width={20} height={15} src={Insurance} alt="" />
             <p className="pl-6 text-xl">Personal Loan</p>
           </div>
-          <div className="insurance flex h-full left-0 top-0  absolute w-full ">
+          <div className="loan_test flex h-full left-0 top-0  absolute w-full ">
             <div
               style={{ position: "absolute", bottom: "0", left: "10%" }}
               className="flex justify-center align-bottom mx-auto"
@@ -108,12 +96,12 @@ const Maincard = () => {
         </div>
 
         {/* Price Bond */}
-        <div className="single_card_item  relative">
-          <div className=" flex align-items-center p-2 hover:bg-slate-400">
+        <div className="prize single_card_item  relative">
+          <div className="single_card_item_header flex align-items-center p-2 hover:bg-slate-400">
             <Image width={20} height={15} src={Prize} alt="" />
             <p className="pl-6 text-xl">Personal Loan</p>
           </div>
-          <div className="prize flex h-full left-0 top-0  absolute w-full ">
+          <div className="loan_test flex h-full left-0 top-0  absolute w-full ">
             <div
               style={{ position: "absolute", bottom: "0", left: "10%" }}
               className="flex justify-center align-bottom mx-auto"

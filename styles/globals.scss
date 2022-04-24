@@ -31,43 +31,56 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
 }
+// .loan:hover .loan_test {
+//   @include hoverMixing;
+// }
 .loan {
-  background-color: #00b0be;
-  &:hover {
+  .loan_test {
+    background-color: #00b0be;
+  }
+  &:hover .loan_test {
     @include hoverMixing;
   }
 }
+
 .deposite {
-  background-color: #7eb06a;
-  &:hover {
+  .loan_test {
+    background-color: #7eb06a;
+  }
+  &:hover .loan_test {
     @include hoverMixing;
   }
 }
+
 .credit_card {
-  background-color: #d3a646;
-  &:hover {
+  .loan_test {
+    background-color: #d3a646;
+  }
+  &:hover .loan_test {
     @include hoverMixing;
   }
 }
+
 .insurance {
-  background-color: #399e72;
-  &:hover {
+  .loan_test {
+    background-color: #399e72;
+  }
+  &:hover .loan_test {
     @include hoverMixing;
   }
 }
 
 .prize {
-  background-color: #b4ac6a;
-  &:hover {
+  .loan_test {
+    background-color: #b4ac6a;
+  }
+  &:hover .loan_test {
     @include hoverMixing;
   }
 }
 
-.singleItem {
-  background-color: #008ecc;
-}
 .singleItem:hover {
-  background-color: #d31414;
+  background-color: #f1f1f1;
   cursor: pointer;
 }
 // .loan:hover {
