@@ -24,10 +24,22 @@ const Maincard = () => {
               <p className="pl-6 text-xl ">Personal Loan </p>
             </a>
           </Link>
+          <Link href={"/users"}>
+            <a className="singleItem flex align-items-center p-2 z-50 ">
+              <Image width={20} height={15} src={Loan} alt="" />
+              <p className="pl-6 text-xl ">Users </p>
+            </a>
+          </Link>
           <Link href={"/users/addUser"}>
             <a className="singleItem flex align-items-center p-2 z-50 ">
               <Image width={20} height={15} src={Loan} alt="" />
               <p className="pl-6 text-xl ">Add New User</p>
+            </a>
+          </Link>
+          <Link href={"/users/userslist"}>
+            <a className="singleItem flex align-items-center p-2 z-50 ">
+              <Image width={20} height={15} src={Loan} alt="" />
+              <p className="pl-6 text-xl ">View Users</p>
             </a>
           </Link>
 

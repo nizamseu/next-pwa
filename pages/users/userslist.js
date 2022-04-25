@@ -3,7 +3,19 @@ import Image from "next/image";
 import Link from "next/link";
 import UserIcon from "../../Images/personalLoan/man.png";
 import Location from "../../Images/Others/location.gif";
-
+import axios from "axios";
+import Swal from "sweetalert2";
+import Router from "next/router";
+import Popup from "reactjs-popup";
+import AddUser from "./addUser";
+const deleteConfirrm = () => {
+  return Swal.fire({
+    icon: "error",
+    title: "Are you want DELETE It?",
+    showCancelButton: true,
+    confirmButtonText: "Yes",
+  });
+};
 export const getServerSideProps = async () => {
   const result = await fetch("http://localhost:3000/api/getuser");
   const data = await result.json();
@@ -14,6 +26,26 @@ export const getServerSideProps = async () => {
   };
 };
 const userslist = ({ users }) => {
+  const handleDelete = (id) => {
+    deleteConfirrm().then((result) => {
+      if (result.isConfirmed) {
+        axios.delete(`/api/getuser/?id=${id}`).then((data) => {
+          if (data) {
+            Router.push("/users/userslist");
+          }
+        });
+        Swal.fire({
+          icon: "error",
+          title: "DELETED",
+          showConfirmButton: false,
+          timer: 1000,
+        });
+      }
+    });
+  };
+
+  const handleEdit = () => {};
+
   return (
     <div className="mt-2">
       <h1 className="text-4xl text-center p-8">All User List</h1>
@@ -69,6 +101,28 @@ const userslist = ({ users }) => {
                       </div>
                     </a>
                   </Link>
+                  <div className="flex justify-between items-center mx-8 pa-8">
+                    {/* <button
+                      onClick={() => handleEdit(item)}
+                      type="button"
+                      className="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-gray-600 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-800"
+                    >
+                      EDIT
+                    </button> */}
+                    <Popup
+                      trigger={<button className="button"> Open Modal </button>}
+                      modal
+                    >
+                      <AddUser></AddUser>
+                    </Popup>
+                    <button
+                      onClick={() => handleDelete(item._id)}
+                      type="button"
+                      className="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-gray-600 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-800"
+                    >
+                      DELETE
+                    </button>
+                  </div>
                 </div>
               </>
             );
