@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0",
+    "mongodb": "^4.5.0",
     "next": "12.1.4",
     "next-pwa": "^5.5.0",
     "node-sass": "^7.0.1",
@@ -19,7 +22,8 @@
     "react-hook-form": "^7.30.0",
     "react-intl": "^5.25.0",
     "react-redux": "^8.0.1",
-    "react-stepper-horizontal": "^1.0.11"
+    "react-stepper-horizontal": "^1.0.11",
+    "sweetalert2": "^11.4.9"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",

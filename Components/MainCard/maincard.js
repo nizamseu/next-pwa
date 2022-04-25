@@ -24,6 +24,12 @@ const Maincard = () => {
               <p className="pl-6 text-xl ">Personal Loan </p>
             </a>
           </Link>
+          <Link href={"/users/addUser"}>
+            <a className="singleItem flex align-items-center p-2 z-50 ">
+              <Image width={20} height={15} src={Loan} alt="" />
+              <p className="pl-6 text-xl ">Add New User</p>
+            </a>
+          </Link>
 
           <div className="loan_test flex h-full left-0 top-0  absolute w-full ">
             <div
@@ -33,7 +39,7 @@ const Maincard = () => {
               <Image height={300} width={300} src={Loan} alt="" />
             </div>
             <p className="cardTitle absolute top-4 left-4  text-2xl font-bold text-white">
-              Loan 22
+              Loan
             </p>
           </div>
         </div>
