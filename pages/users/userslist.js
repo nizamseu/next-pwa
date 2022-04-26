@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 import Router from "next/router";
 import Popup from "reactjs-popup";
 import AddUser from "./addUser";
+import Update from "./update/[id]";
 const deleteConfirrm = () => {
   return Swal.fire({
     icon: "error",
@@ -109,12 +110,17 @@ const userslist = ({ users }) => {
                     >
                       EDIT
                     </button> */}
-                    <Popup
+                    <Link href={`/users/update/${item._id} `} passHref>
+                      <a>
+                        adit
+                        {/* <Popup
                       trigger={<button className="button"> Open Modal </button>}
                       modal
                     >
-                      <AddUser></AddUser>
-                    </Popup>
+                      <Update></Update>
+                    </Popup> */}
+                      </a>
+                    </Link>
                     <button
                       onClick={() => handleDelete(item._id)}
                       type="button"
