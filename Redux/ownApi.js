@@ -6,13 +6,22 @@ export const userAPI = createApi({
     baseUrl: "https://jsonplaceholder.typicode.com/",
   }),
   endpoints: (builder) => ({
+    //get all users
     getAllUser: builder.query({
       query: () => ({
         url: "users",
         method: "GET",
       }),
     }),
+
+    //   get All post
+    getAllPost: builder.query({
+      query: () => ({
+        url: "posts",
+        method: "GET",
+      }),
+    }),
   }),
 });
 
-export const { useGetAllUserQuery } = userAPI;
+export const { useGetAllUserQuery, useGetAllPostQuery } = userAPI;

@@ -4,11 +4,14 @@ import MenuIcon from "../../Images/Icon/menu.png";
 import Logo from "../../Images/Icon/logoWeb.png";
 import Layer from "../../Images/Icon/Layer-6.png";
 import Offer from "../../Images/Icon/offers.svg";
+import Link from "next/link";
+import useAuth from "../../Hooks/useAuth";
 export default function IndexPage() {
   const [show, setShow] = useState(null);
   const [profile, setProfile] = useState(false);
   const [product, setProduct] = useState(false);
   const [deliverables, setDeliverables] = useState(false);
+  const { user, logOut } = useAuth();
   return (
     <>
       <div className="bg-gray-200 h-full w-full">
@@ -50,7 +53,7 @@ export default function IndexPage() {
                 </div>
               </div>
               <div className="flex">
-                <div className="hidden xl:flex md:mr-6 xl:mr-16">
+                <div className="hidden xl:flex md:mr-6 xl:mr-16 justify-center items-center">
                   <a
                     href="javascript: void(0)"
                     className="flex nav_tracking px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out"
@@ -63,6 +66,18 @@ export default function IndexPage() {
                   >
                     Trending Offers
                   </a>
+                  {user?.email ? (
+                    <div className="flex items-center">
+                      <h1>{user.displayName}</h1>{" "}
+                      <button onClick={logOut} className="ml-2">
+                        Log Out
+                      </button>{" "}
+                    </div>
+                  ) : (
+                    <Link href="/login">
+                      <a>Login</a>
+                    </Link>
+                  )}
                 </div>
                 <div className="hidden xl:flex items-center mr-2">
                   <p className="py-2">Menu</p>

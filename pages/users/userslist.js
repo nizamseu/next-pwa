@@ -6,7 +6,7 @@ import Location from "../../Images/Others/location.gif";
 import axios from "axios";
 import Swal from "sweetalert2";
 import Router from "next/router";
-import Popup from "reactjs-popup";
+// import Popup from "reactjs-popup";
 import AddUser from "./addUser";
 import Update from "./update/[id]";
 const deleteConfirrm = () => {
