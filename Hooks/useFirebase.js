@@ -15,7 +15,7 @@ import {
 import firebaseInitialize from "../firebase/firebaseinitialize";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { Router } from "next/router";
+import Router from "next/router";
 
 firebaseInitialize();
 
@@ -32,9 +32,7 @@ const useFirebase = () => {
     setIsloading(true);
     signInWithPopup(auth, googleProvider)
       .then((result) => {
-        if (result.user) {
-          Router.push("/");
-        }
+        Router.push("/");
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -48,6 +46,72 @@ const useFirebase = () => {
         setUser({});
       })
       .catch((error) => {})
+      .finally(() => setIsloading(false));
+  };
+
+  const createNewUserUsingEmailPassword = (email, password, displayName) => {
+    const URL = "https://teamssyaan.blob.core.windows.net/images/user.png";
+    setIsloading(true);
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((res) => {
+        setUser(res.user);
+        profileUpdate(displayName, URL);
+        Swal.fire({
+          icon: "success",
+          title: "Successfully Register",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+        Router.push("/login");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        Swal.fire({
+          icon: "error",
+          title: errorMessage,
+          showConfirmButton: false,
+          timer: 2000,
+        });
+        setError(errorMessage);
+      })
+      .finally(() => setIsloading(false));
+  };
+
+  const profileUpdate = (name, URl) => {
+    updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: URl,
+    })
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const signInWithEmailPassword = (email, password) => {
+    setIsloading(true);
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Login Successfull",
+          showConfirmButton: false,
+          timer: 2000,
+        }).then(function () {
+          Router.push("/");
+        });
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        Swal.fire({
+          icon: "error",
+          title: errorMessage,
+          showConfirmButton: false,
+          timer: 2000,
+        });
+        setError(errorMessage);
+      })
       .finally(() => setIsloading(false));
   };
 
@@ -69,6 +133,8 @@ const useFirebase = () => {
     signInUsingGoogle,
     logOut,
     user,
+    createNewUserUsingEmailPassword,
+    signInWithEmailPassword,
   };
 };
 

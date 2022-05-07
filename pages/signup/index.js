@@ -3,17 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { useForm } from "react-hook-form";
+import useAuth from "../../Hooks/useAuth";
 const Index = () => {
+  const { createNewUserUsingEmailPassword } = useAuth();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    // createNewUserUsingEmailPassword(
-    //   auth,
-    //   data.email,
-    //   data.password,
-    //   data.displayName,
-    //   navigate,
-    //   location
-    // );
+    console.log(data);
+    createNewUserUsingEmailPassword(
+      data.email,
+      data.password,
+      data.displayName
+    );
   };
 
   return (

@@ -6,11 +6,11 @@ import { faLock } from "@fortawesome/free-solid-svg-icons";
 import useAuth from "../../Hooks/useAuth";
 
 const Index = () => {
-  const { user, signInUsingGoogle } = useAuth();
+  const { user, signInUsingGoogle, signInWithEmailPassword } = useAuth();
   const { register, handleSubmit } = useForm();
-  console.log("from login", user);
+
   const onSubmit = (data) => {
-    console.log(data);
+    signInWithEmailPassword(data.email, data.password);
   };
   return (
     <div className="container mx-auto px-4 md:px-11 ">
@@ -76,24 +76,24 @@ const Index = () => {
                 <span className="font-normal text-gray-500">or login with</span>
                 <span className="h-px bg-gray-400 w-14"></span>
               </span>
-              <div className="flex flex-col space-y-4">
-                <button
-                  onClick={signInUsingGoogle}
-                  className="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-red-500 rounded-md group hover:bg-red-500 focus:outline-none"
-                >
-                  <span>
-                    <FontAwesomeIcon
-                      icon={faGoogle}
-                      className="group-hover:text-white text-lg text-red-500"
-                    />
-                  </span>
-                  <span className="text-sm font-medium text-red-500 group-hover:text-white">
-                    Google
-                  </span>
-                </button>
-              </div>
             </div>
           </form>
+          <div className="flex flex-col space-y-4">
+            <button
+              onClick={signInUsingGoogle}
+              className="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-red-500 rounded-md group hover:bg-red-500 focus:outline-none"
+            >
+              <span>
+                <FontAwesomeIcon
+                  icon={faGoogle}
+                  className="group-hover:text-white text-lg text-red-500"
+                />
+              </span>
+              <span className="text-sm font-medium text-red-500 group-hover:text-white">
+                Google
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
