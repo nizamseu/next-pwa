@@ -69,7 +69,10 @@ export default function IndexPage() {
                   {user?.email ? (
                     <div className="flex items-center">
                       <h1>{user.displayName}</h1>{" "}
-                      <button onClick={logOut} className="ml-2">
+                      <button
+                        onClick={logOut}
+                        className="ml-2 text-rose-600 font-bold"
+                      >
                         Log Out
                       </button>{" "}
                     </div>

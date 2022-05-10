@@ -60,7 +60,7 @@ const Index = () => {
                 href="/signup"
                 className="text-sm text-blue-600 hover:underline focus:text-blue-800"
               >
-                <a>Dont have account?</a>
+                <a className="text-sky-500 font-bold">Dont have account?</a>
               </Link>
             </div>
 

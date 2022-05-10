@@ -76,7 +76,7 @@ const Index = () => {
                 href="/login"
                 className="text-sm text-blue-600 hover:underline focus:text-blue-800"
               >
-                <a> Already have account?</a>
+                <a className="text-sky-500 font-bold"> Already have account?</a>
               </Link>
             </div>
 
